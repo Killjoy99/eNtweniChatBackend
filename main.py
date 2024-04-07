@@ -9,6 +9,11 @@ from database import get_session
 
 app = FastAPI()
 
+
+@app.get("/")
+def index():
+    return HTMLResponse(open("index.html").read())
+
 @app.websocket("/chat")
 async def eNtweniChatAppEndpoint(websocket: WebSocket):
     await websocket.accept()
