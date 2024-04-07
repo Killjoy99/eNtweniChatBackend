@@ -1,0 +1,5 @@
+fastapi
+sqlalchemy
+uvicorn
+secrets
+json
