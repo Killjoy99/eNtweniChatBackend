@@ -14,6 +14,10 @@ app = FastAPI()
 def index():
     return HTMLResponse(open("index.html").read())
 
+@app.get("about/")
+def about():
+    return HTMLResponse(open("about.html").read())
+
 @app.websocket("/chat")
 async def eNtweniChatAppEndpoint(websocket: WebSocket):
     await websocket.accept()
